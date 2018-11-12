@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="Git常用命令速查表（待补充…）">
+<meta name="description" content="VUE ​    关于webapp的底部导航栏，有些子页面不需要显示，或者显示其他底部导航，一开始是通过vuex在state中存了一个状态值，在各个组件created生命周期中获取相关状态值并根据是否需要显示改变（如：this.$store.state.showBottomNav）。但是这样会出现一种情况：当从一个状态值设置为true的页面跳转到状态值为false的页面，通过created中设置t">
 <meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git">
-<meta property="og:url" content="http://shizhongzheng.github.io/2018/03/29/git/index.html">
+<meta property="og:title" content="Vue学习随笔">
+<meta property="og:url" content="http://shizhongzheng.github.io/2018/11/12/Vue学习随笔/index.html">
 <meta property="og:site_name" content="ThedisappearanceofZ">
-<meta property="og:description" content="Git常用命令速查表（待补充…）">
+<meta property="og:description" content="VUE ​    关于webapp的底部导航栏，有些子页面不需要显示，或者显示其他底部导航，一开始是通过vuex在state中存了一个状态值，在各个组件created生命周期中获取相关状态值并根据是否需要显示改变（如：this.$store.state.showBottomNav）。但是这样会出现一种情况：当从一个状态值设置为true的页面跳转到状态值为false的页面，通过created中设置t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/8yL7tB7.png">
-<meta property="og:image" content="https://i.imgur.com/3BJ2Yhr.png">
-<meta property="og:updated_time" content="2018-09-09T10:09:26.943Z">
+<meta property="og:updated_time" content="2018-11-12T14:45:19.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git">
-<meta name="twitter:description" content="Git常用命令速查表（待补充…）">
-<meta name="twitter:image" content="https://i.imgur.com/8yL7tB7.png">
+<meta name="twitter:title" content="Vue学习随笔">
+<meta name="twitter:description" content="VUE ​    关于webapp的底部导航栏，有些子页面不需要显示，或者显示其他底部导航，一开始是通过vuex在state中存了一个状态值，在各个组件created生命周期中获取相关状态值并根据是否需要显示改变（如：this.$store.state.showBottomNav）。但是这样会出现一种情况：当从一个状态值设置为true的页面跳转到状态值为false的页面，通过created中设置t">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://shizhongzheng.github.io/2018/03/29/git/"/>
+  <link rel="canonical" href="http://shizhongzheng.github.io/2018/11/12/Vue学习随笔/"/>
 
 
 
 
 
-  <title>git | ThedisappearanceofZ</title>
+  <title>Vue学习随笔 | ThedisappearanceofZ</title>
   
 
 
@@ -256,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhongzheng.github.io/2018/03/29/git/">
+    <link itemprop="mainEntityOfPage" href="http://shizhongzheng.github.io/2018/11/12/Vue学习随笔/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="咻咻咻">
@@ -273,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git</h1>
+          <h1 class="post-title" itemprop="name headline">Vue学习随笔</h1>
         
 
         <div class="post-meta">
@@ -285,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T17:20:12+08:00">
-                2018-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T22:43:10+08:00">
+                2018-11-12
               </time>
             
 
@@ -323,7 +320,12 @@
       
 
       
-        <p><img src="https://i.imgur.com/8yL7tB7.png" alt="git提交流程"><br><img src="https://i.imgur.com/3BJ2Yhr.png" alt="git常用命令">Git常用命令速查表（待补充…）</p>
+        <h1 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h1><ol>
+<li>​    关于webapp的底部导航栏，有些子页面不需要显示，或者显示其他底部导航，一开始是通过vuex在state中存了一个状态值，在各个组件created生命周期中获取相关状态值并根据是否需要显示改变（如：<code>this.$store.state.showBottomNav</code>）。但是这样会出现一种情况：当从一个状态值设置为true的页面跳转到状态值为false的页面，通过created中设置<code>this.$store.state.showBottomNav = false</code>改变状态值，不显示底部导航。当点击返回键返回上一个页面时，底部导航就不显示了，<strong>因为TODO（这里涉及到Vue Router的路由相关知识，待补充），之前改变了底部导航状态showBottomNav为false，返回路由上一个路径时，并不会再次执行该组件生命周期？？？所以state仓库里的showBottomNav状态值并没有改变。</strong><ul>
+<li>目前办法是：将showBottomNav状态值，放在route.js各个路由的meta元信息中，这样跳转到相关路由就不会出现上述情况了。</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -354,8 +356,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/13/day1/" rel="next" title="Day 1">
-                <i class="fa fa-chevron-left"></i> Day 1
+              <a href="/2018/09/20/111/" rel="next" title="111">
+                <i class="fa fa-chevron-left"></i> 111
               </a>
             
           </div>
@@ -363,10 +365,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/09/Way-back-home/" rel="prev" title="Way_back_home">
-                Way_back_home <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,8 +416,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,6 +481,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE"><span class="nav-number">1.</span> <span class="nav-text">VUE</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

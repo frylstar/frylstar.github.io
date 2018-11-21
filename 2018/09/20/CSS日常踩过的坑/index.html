@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ThedisappearanceofZ">
 <meta property="og:description" content="CSS日常踩过的坑关于 iconfont 阿里图标的使用： 引入项目文件：&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;./iconfont.css&amp;quot;&amp;gt;  &amp;lt;i class=&amp;quot;iconfont icon-xxx&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;  在用到箭头字体">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T16:00:47.302Z">
+<meta property="og:updated_time" content="2018-11-21T14:53:28.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS日常踩过的坑">
 <meta name="twitter:description" content="CSS日常踩过的坑关于 iconfont 阿里图标的使用： 引入项目文件：&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;./iconfont.css&amp;quot;&amp;gt;  &amp;lt;i class=&amp;quot;iconfont icon-xxx&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;  在用到箭头字体">
@@ -333,6 +333,11 @@
 <li><strong>行内元素旋转无效</strong>，所以需要给<code>.rotate:before</code>伪元素加上<code>display: inline-block</code>，使其变为行内块元素。</li>
 <li><strong>最重要的一点！！</strong>旋转之后 padding-top 会变成 padding-bottom，也就是旋转会带着盒模型一起旋转</li>
 </ul>
+<h2 id="关于在less中使用css3的calc"><a href="#关于在less中使用css3的calc" class="headerlink" title="关于在less中使用css3的calc"></a>关于在less中使用css3的calc</h2><p>​    在less中使用CSS3 calc时，如：<code>height: calc(100% - 2rem)</code>，会被less编译成calc(98%)，即在less中使用前面所示等带单位的混合运算会被less解析忽略单位，全部按照百分比计算。——2018.11.21</p>
+<ul>
+<li>原因：less的计算方式跟calc方法有重叠，两者在一起有冲突</li>
+<li>解决方案：<code>height: e(&quot;calc(100% - 2rem)&quot;);</code> 或者是 <code>height: calc(~&quot;100% - 2rem&quot;);</code></li>
+</ul>
 </li>
 </ol>
 
@@ -504,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS日常踩过的坑"><span class="nav-number">1.</span> <span class="nav-text">CSS日常踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-iconfont-阿里图标的使用："><span class="nav-number">1.1.</span> <span class="nav-text">关于 iconfont 阿里图标的使用：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS日常踩过的坑"><span class="nav-number">1.</span> <span class="nav-text">CSS日常踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-iconfont-阿里图标的使用："><span class="nav-number">1.1.</span> <span class="nav-text">关于 iconfont 阿里图标的使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于在less中使用css3的calc"><span class="nav-number">1.2.</span> <span class="nav-text">关于在less中使用css3的calc</span></a></li></ol></li></ol></div>
             
 
           </div>
